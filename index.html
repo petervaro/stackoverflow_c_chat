@@ -48,7 +48,18 @@ body
     font-weight: 700;
 }
 
-.info { text-align: center; }
+.sectiontitle
+{
+    font-size: 16pt;
+    font-weight: 400;
+    color: #A8B9CC;
+}
+
+.info, .example, .sectiontitle
+{
+    text-align: center;
+    padding-bottom: 32pt;
+}
 
 table
 {
@@ -65,6 +76,8 @@ td
 
 td:first-child { padding-right: 16pt; }
 td:last-child { font-size: 10pt; }
+
+.example_user { font-size: 10pt; }
 
 code
 {
@@ -87,20 +100,101 @@ code
         <div class="info">
             <table>
                 <tr>
-                    <td><pre><code><span class="keyword">helloc</span> &lt;user&gt; <span class="or">or</span> all;</code></pre></td>
+                    <td><pre><code><span class="keyword">helloc</span> &lt;user&gt; <span class="or">or</span> &lt;user&gt; &amp;&amp; &lt;user&gt; <span class="or">or</span> all;</code></pre></td>
                     <td>welcome <span class="or">|</span> hello</td>
                 </tr>
                 <tr>
-                    <td><pre><code><span class="keyword">free</span> &lt;user&gt; <span class="or">or</span> all;</code></pre></td>
+                    <td><pre><code><span class="keyword">free</span> &lt;user&gt; <span class="or">or</span> &lt;user&gt; &amp;&amp; &lt;user&gt; <span class="or">or</span> all;</code></pre></td>
                     <td>good bye <span class="or">|</span> see you</td>
                 </tr>
                 <tr>
-                    <td><pre><code><span class="keyword">goto</span> &lt;state&gt;;</code></pre></td>
+                    <td><pre><code><span class="keyword">goto</span> &lt;state&gt; <span class="or">or</span> &lt;interval&gt;;</code></pre></td>
                     <td>away <span class="or">|</span> later <span class="or">|</span> afk</td>
                 </tr>
                 <tr>
-                    <td><pre><code><span class="keyword">return</span> &lt;state&gt;;</code></pre></td>
+                    <td><pre><code><span class="keyword">return</span> <span class="or">or</span> &lt;state&gt; <span class="or">or</span> &lt;interval&gt;;</code></pre></td>
                     <td>back <span class="or">|</span> back for a bit</td>
+                </tr>
+            </table>
+        </div>
+        <div class="sectiontitle">Example:</div>
+        <div class="example">
+            <table>
+                <tr>
+                    <td class="example_user">Dennis Ritchie</td>
+                    <td><pre><code><span class="keyword">helloc</span> all;</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code>What's up?</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Brian Kernighan</td>
+                    <td><pre><code><span class="keyword">helloc</span> @DennisRitchie;</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code>Same old, same old! How 'bout you?</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Dennis Ritchie</td>
+                    <td><pre><code>Ken and I are working on something great.</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Kenneth Thompson</td>
+                    <td><pre><code><span class="keyword">helloc</span> @DennisRitchie &amp;&amp; @BrianKernighan;</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code>Not only great, but totally simple!</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Dennis Ritchie</td>
+                    <td><pre><code>Well, Unix is simple. It just takes</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code>a genius to understand its simplicity.</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Kenneth Thompson</td>
+                    <td><pre><code>LOL :)</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Dennis Ritchie</td>
+                    <td><pre><code>Anyway, gotta go now..</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code><span class="keyword">goto</span> away;</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Kenneth Thompson</td>
+                    <td><pre><code><span class="keyword">free</span> @DennisRitchie;</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Brian Kernighan</td>
+                    <td><pre><code><span class="keyword">free</span> @DennisRitchie;</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code>Btw, what do you think, how long does it</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code>take to became a pro C dev?</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user">Dennis Ritchie</td>
+                    <td><pre><code><span class="keyword">return</span> for_a_sec;</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code>I don't know. I never had to learn C..</code></pre></td>
+                </tr>
+                <tr>
+                    <td class="example_user"></td>
+                    <td><pre><code><span class="keyword">free</span> all;</code></pre></td>
                 </tr>
             </table>
         </div>
