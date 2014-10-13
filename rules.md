@@ -24,9 +24,9 @@ Rules
         each other, to start meaningful and constructive conversations and to
         achieve the goal of this room. (*[See the first rule!](#rules)*)
 
-2. No trolling.
+2. No trolling!
 
-    >   And definitely don not feed them! What is trolling? An endless and
+    >   And especially do not feed the trolls! What is trolling? An endless and
         purposeless debate which is being instigated again and again by the same
         debater.
 
