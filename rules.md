@@ -22,9 +22,15 @@ Rules
     >   This is a very friendly, open and helpful room. And we are working very
         hard to keep it that way, and so should you. We are all here to help
         each other, to start meaningful and constructive conversations and to
-        achive the goal of this room. (*[See the first rule!](#rules)*)
+        achieve the goal of this room. (*[See the first rule!](#rules)*)
 
-2.  C stands for...
+2. No trolling.
+
+    >   And definitely don not feed them! What is trolling? An endless and
+        purposeless debate which is being instigated again and again by the same
+        debater.
+
+3.  C stands for...
 
     >   Code, Control, Community, Complexity, Creativity, Craziness... -- you
         get the point ;)
