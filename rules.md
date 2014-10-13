@@ -27,7 +27,7 @@ Rules
 2. No trolling! (And no feeding!)
 
     >   What is trolling? An endless and purposeless debate which is being
-        instigated again and again by the same debater.
+        instigated again and again by the same debater, the troll.
 
 3.  C stands for...
 
