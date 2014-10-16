@@ -6,7 +6,7 @@
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
 // @author Peter Varo
 // @version 0.1.9
-// @updateURL https://github.com/petervaro/stackoverflow_c_chat/blob/gh-pages/chatlang.user.js
+// @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @grant none
 // ==/UserScript==
 (function ()
