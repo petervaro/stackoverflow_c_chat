@@ -5,7 +5,7 @@
 // @include http://chat.stackoverflow.com/rooms/54304/c
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
 // @author Peter Varo
-// @version 0.2.2
+// @version 0.2.3
 // @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @grant none
 // ==/UserScript==
@@ -35,7 +35,7 @@
                         '(http://bit.ly/c_chat)'};
 
     /* Construct pattern based on abbreviations */
-    var pattern_abbr = '[^`"\'\\w\\]/(';
+    var pattern_abbr = '[^`"\'\\w]/(';
     var not_first = 0;
     for (var abbreviation in hints)
     {
