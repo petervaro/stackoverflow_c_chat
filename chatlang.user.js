@@ -35,7 +35,7 @@
                         '(http://bit.ly/c_chat)'};
 
     /* Construct pattern based on abbreviations */
-    var pattern_abbr = '[^`"\'\\w]/(';
+    var pattern_abbr = '[^`"\'\\w\\\\]/(';
     var not_first = 0;
     for (var abbreviation in hints)
     {
