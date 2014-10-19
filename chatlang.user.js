@@ -46,7 +46,6 @@
         not_first++;
     }
     pattern_abbr = new RegExp(pattern_abbr + ')', 'gi');
-    console.log(pattern_abbr.source);
 
     /* Create and bind callback to event */
     input.addEventListener(
