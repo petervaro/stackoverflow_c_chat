@@ -5,7 +5,7 @@
 // @include http://chat.stackoverflow.com/rooms/54304/c
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
 // @author Peter Varo
-// @version 0.2.1
+// @version 0.2.2
 // @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @grant none
 // ==/UserScript==
@@ -35,7 +35,7 @@
                         '(http://bit.ly/c_chat)'};
 
     /* Construct pattern based on abbreviations */
-    var pattern_abbr = '/(';
+    var pattern_abbr = '[^`"\'\\w\\]/(';
     var not_first = 0;
     for (var abbreviation in hints)
     {
@@ -46,6 +46,7 @@
         not_first++;
     }
     pattern_abbr = new RegExp(pattern_abbr + ')', 'gi');
+    console.log(pattern_abbr.source);
 
     /* Create and bind callback to event */
     input.addEventListener(
