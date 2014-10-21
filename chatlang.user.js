@@ -5,7 +5,7 @@
 // @include http://chat.stackoverflow.com/rooms/54304/c
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
 // @author Peter Varo
-// @version 0.3.3
+// @version 0.3.4
 // @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @grant none
 // ==/UserScript==
@@ -57,7 +57,7 @@
 
     /* Construct regex pattern based on abbreviations and
        also build the cheat-sheet as well */
-    var pattern_abbr = '(^|[^`"\'\\w\\\\])(/(';
+    var pattern_abbr = '(^|[^`"\'/\\w\\\\])(/(';
     var not_first = 0;
     var values = [];
     for (var abbreviation in abbreviations)
