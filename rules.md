@@ -39,9 +39,11 @@ Rules
 Guidelines
 ----------
 
+Please read the [chatroom FAQ](https://chat.stackoverflow.com/faq) if you haven't already
+
 0.  Use our *chat-lang*, because it's fun!
 
-    >   We have a [tiny little language](http://bit.ly/c_chat) we use to greet
+    >   We have a [tiny language](http://bit.ly/c_chat) we use to greet
         each other, to say 'good bye', to indicate we are currently not
         available or we have returned. *And of course, it is C related ;)*
 
