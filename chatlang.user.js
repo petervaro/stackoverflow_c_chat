@@ -5,7 +5,7 @@
 // @include http://chat.stackoverflow.com/rooms/54304/c
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
 // @author Peter Varo
-// @version 0.3.4
+// @version 0.4.0
 // @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @grant none
 // ==/UserScript==
@@ -38,10 +38,15 @@
                 'http://stackoverflow.com/questions/562303'],
         ask  : ['Short, Self Contained, Compilable, Example',
                 'http://sscce.org'],
-        room : ['Draft of Guidelines of This Room',
+        room : ['Draft of the Guidelines of This Room',
                 'https://github.com/petervaro/stackoverflow_c_chat/blob/gh-pages/rules.md'],
         chat : ['Chat-Lang',
-                'http://bit.ly/c_chat']
+                'http://bit.ly/c_chat'],
+        lang : ['Chat-Lang User Script',
+                'https://raw.githubusercontent.com/petervaro/stackoverflow' +
+                '_c_chat/gh-pages/chatlang.user.js'],
+        sand : ["StackOverflow's Sandbox room",
+                'http://chat.stackoverflow.com/rooms/1/sandbox']
     };
 
     /* Build hierarchy of the cheat-sheet */
@@ -55,11 +60,26 @@
     var notes_code = notes_pre.appendChild(document.createElement('code'));
     notes_pre.appendChild(document.createElement('hr'));
 
+    /* Function factory => the returned function will be called, whenever
+       the user clicks on one of the items of the cheat sheet */
+    function createOnClickHandler(abbreviation)
+    {
+        return (function ()
+        {
+            var value = input.value;
+            input.value = value.slice(0, input.selectionStart) +
+                          abbreviations[abbreviation] +
+                          value.slice(input.selectionEnd);
+            input.focus();
+        });
+    }
+
     /* Construct regex pattern based on abbreviations and
        also build the cheat-sheet as well */
     var pattern_abbr = '(^|[^`"\'/\\w\\\\])(/(';
     var not_first = 0;
     var values = [];
+    var a, span;
     for (var abbreviation in abbreviations)
     {
         /* If not the first iteration */
@@ -74,15 +94,20 @@
         values = abbreviations[abbreviation];
         abbreviations[abbreviation] = '[' + values[0] + '](' + values[1] + ')';
         /* Extend notes */
-        notes_code.appendChild(document.createElement('span')).innerHTML =
-            '/' + abbreviation + (abbreviation.length > 3 ? '' : ' ') + ' =&gt; ' + values[0];
+        span = notes_code.appendChild(document.createElement('span'));
+        a = span.appendChild(document.createElement('a'));
+        a.innerHTML = '/' + abbreviation;
+        a.onclick = createOnClickHandler(abbreviation);
+        a.style.cursor = 'pointer';
+        span.appendChild(document.createTextNode(
+            (abbreviation.length > 3 ? '' : ' ') +' => ' + values[0]));
     }
     pattern_abbr = new RegExp(pattern_abbr + '))', 'gi');
 
     /* Replacer function */
     function autoCompleteLink(match, _1, _2, abbreviation)
     {
-        /* HACK: the extra space is need, because of the lack of the negative
+        /* HACK: the extra space is needed, because of the lack of the negative
                  look-behind in the regular expression => try to solve this! */
         return (match[0] === '/' ? '' : ' ') + abbreviations[abbreviation];
     }
