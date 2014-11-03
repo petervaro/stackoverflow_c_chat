@@ -5,7 +5,7 @@
 // @include http://chat.stackoverflow.com/rooms/54304/c
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
 // @author Peter Varo
-// @version 0.4.0
+// @version 0.4.3
 // @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @grant none
 // ==/UserScript==
@@ -16,7 +16,7 @@
     var info  = document.getElementById('info');
 
     /* Constant values */
-    var pattern_lang = /^(helloc|free|goto|return)/gi;
+    var pattern_lang = /^(helloc|free|goto|return)(\s*(\S.+$))?/gi;
     var link  = '`](http://bit.ly/c_chat);';
     var abbreviations =
     {
@@ -46,7 +46,9 @@
                 'https://raw.githubusercontent.com/petervaro/stackoverflow' +
                 '_c_chat/gh-pages/chatlang.user.js'],
         sand : ["StackOverflow's Sandbox room",
-                'http://chat.stackoverflow.com/rooms/1/sandbox']
+                'http://chat.stackoverflow.com/rooms/1/sandbox'],
+        lic  : ['Choosing an OSS License',
+                'http://choosealicense.com']
     };
 
     /* Build hierarchy of the cheat-sheet */
@@ -79,7 +81,7 @@
     var pattern_abbr = '(^|[^`"\'/\\w\\\\])(/(';
     var not_first = 0;
     var values = [];
-    var a, span;
+    var item;
     for (var abbreviation in abbreviations)
     {
         /* If not the first iteration */
@@ -93,14 +95,19 @@
         /* Create constant string for markdown */
         values = abbreviations[abbreviation];
         abbreviations[abbreviation] = '[' + values[0] + '](' + values[1] + ')';
-        /* Extend notes */
-        span = notes_code.appendChild(document.createElement('span'));
-        a = span.appendChild(document.createElement('a'));
-        a.innerHTML = '/' + abbreviation;
-        a.onclick = createOnClickHandler(abbreviation);
-        a.style.cursor = 'pointer';
-        span.appendChild(document.createTextNode(
-            (abbreviation.length > 3 ? '' : ' ') +' => ' + values[0]));
+        /* Extend notes:
+           Insertion link */
+        item = notes_code.appendChild(document.createElement('a'));
+        item.innerHTML = '/' + abbreviation;
+        item.onclick = createOnClickHandler(abbreviation);
+        item.style.cursor = 'pointer';
+        /* "Draw" arrow */
+        item = notes_code.appendChild(document.createElement('span'));
+        item.innerHTML = (abbreviation.length > 3 ? '' : ' ') + ' => ';
+        /* Clickable link */
+        item = notes_code.appendChild(document.createElement('a'));
+        item.innerHTML = values[0];
+        item.href = values[1];
     }
     pattern_abbr = new RegExp(pattern_abbr + '))', 'gi');
 
@@ -122,8 +129,13 @@
             var match = pattern_lang.exec(input.value);
             if (match !== null)
             {
-                var text = input.value = '[`' + match[1] + link;
-                input.selectionStart = input.selectionEnd = text.length - 1;
+                var text  = input.value = '[`' + match[1] + link;
+                var caret = input.selectionStart = input.selectionEnd = text.length - 1;
+                /* If there was a word like character before */
+                if (match[2])
+                    input.value = text.substring(0, caret) +
+                                  ' ' + match[3] +
+                                  text.substring(caret, text.length);
                 return;
             }
 
