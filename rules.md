@@ -24,7 +24,12 @@ Rules
         each other, to start meaningful and constructive conversations and to
         achieve the goal of this room. (*[See the first rule!](#rules)*)
 
-2. No trolling! (And no feeding!)
+    >   Feel free to ping whenever it helps to smoothen the conversation. Don't
+        overdo it though as it can get annoying.
+
+    >   You don't need to ask if it's okay to ask a question in the room.
+
+2.  No trolling! (And no feeding!)
 
     >   What is trolling? An endless and purposeless debate which is being
         instigated again and again by the same debater, the troll.
