@@ -50,7 +50,7 @@ Please read the [chatroom FAQ](https://chat.stackoverflow.com/faq) if you haven'
 
     >   We have a [tiny language](http://bit.ly/c_chat) we use to greet
         each other, to say 'good bye', to indicate we are currently not
-        available or we have returned. *And of course, it is C related ;)*
+        available or that we have returned. *And of course, it is C related ;)*
 
 1.  You don't have to ask to ask, just ask.
 
@@ -75,12 +75,14 @@ Please read the [chatroom FAQ](https://chat.stackoverflow.com/faq) if you haven'
 4.  Be polite!
 
     >   If you think someone truly helped you, don't hesitate to say thank you,
-        it is a nice and completely free gesture.
+        it is a nice and completely free gesture. (Joining the community is the
+        best way to say thanks :))
         Also, try to avoid rude words and swearing. If you must have to use this
         kind of language, learn to use the chat's markdown, and post it as a
         striked through text.
-        (*Warning: inappropriate language won't be tolerated and the message
-        containing it will be removed to trash!*)
+
+    **Warning: inappropriate language won't be tolerated and the message
+    would be removed to trash!**
 
 
 Contact
