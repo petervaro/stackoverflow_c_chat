@@ -91,6 +91,6 @@ Contact
 If you have any questions or observations about this room, feel free to contact
 one of the owners directly, or ping them publicly in the room:
 
-  - [Peter Varo](http://chat.stackoverflow.com/users/2188562/peter-varo)
-  - [Kamiccolo](http://chat.stackoverflow.com/users/1150918/kamiccolo)
-  - [Apoorv](http://chat.stackoverflow.com/users/2295060/apoorv)
+  - [Peter Varo](http://stackoverflow.com/users/2188562)
+  - [Kamiccolo](http://stackoverflow.com/users/1150918)
+  - [Haris](http://stackoverflow.com/users/1795279)
