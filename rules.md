@@ -4,7 +4,7 @@ The Order Of The C Chatroom
 Rules
 -----
 
-0.  The purpose of this room is to help each other learning, understanding and
+0.  The purpose of this room is to help each other in learning, understanding and
     using the C programming language and all its related theories and
     technologies (compilers, preprocessors, build automation systems, UNIX,
     versioning, etc).
