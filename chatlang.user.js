@@ -1,55 +1,63 @@
 // ==UserScript==
-// @id chat-lang@petervaro
+// @id chatlang@petervaro
 // @name The C Stackoverflow Chatroom's chat-lang auto-formatter
 // @namespace petervaro
+// @author Peter Varo
+// @version 0.4.6
+// @downloadURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
+// @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @include http://chat.stackoverflow.com/rooms/54304/c
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
-// @author Peter Varo
-// @version 0.4.3
-// @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
+// @run-at document-end
 // @grant none
 // ==/UserScript==
 (function ()
 {
+    "use strict";
+
     /* DOM objects */
-    var input = document.getElementById('input');
-    var info  = document.getElementById('info');
+    var input = document.getElementById('input'),
+        info  = document.getElementById('info');
 
     /* Constant values */
-    var pattern_lang = /^(helloc|free|goto|return)(\s*(\S.+$))?/gi;
-    var link  = '`](http://bit.ly/c_chat);';
-    var abbreviations =
-    {
-        faq  : ['Frequently Asked Questions',
-                'http://c-faq.com'],
-        decl : ['C Gibberish to English',
-                'http://cdecl.org'],
-        ptr  : ['Everything About Pointers',
-                'http://boredzo.org/pointers'],
-        ref  : ['C Reference',
-                'http://en.cppreference.com/w/c/header'],
-        std  : ['C11 Standard',
-                'http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf'],
-        test : ['Unit-testing Macros',
-                'http://www.jera.com/techinfo/jtns/jtn002.html'],
-        bigo : ['Space and Time Big-O Complexities',
-                'http://www.bigocheatsheet.com'],
-        book : ['The Definitive C Book Guide and List',
-                'http://stackoverflow.com/questions/562303'],
-        ask  : ['Short, Self Contained, Compilable, Example',
-                'http://sscce.org'],
-        room : ['Draft of the Guidelines of This Room',
-                'https://github.com/petervaro/stackoverflow_c_chat/blob/gh-pages/rules.md'],
-        chat : ['Chat-Lang',
-                'http://bit.ly/c_chat'],
-        lang : ['Chat-Lang User Script',
-                'https://raw.githubusercontent.com/petervaro/stackoverflow' +
-                '_c_chat/gh-pages/chatlang.user.js'],
-        sand : ["StackOverflow's Sandbox room",
-                'http://chat.stackoverflow.com/rooms/1/sandbox'],
-        lic  : ['Choosing an OSS License',
-                'http://choosealicense.com']
-    };
+    var pattern_lang  = /^(helloc|free|goto|return)(\s*(\S.+$))?/gi,
+        link          = '`](http://bit.ly/c_chat);',
+        abbreviations =
+        {
+            faq  : ['Frequently Asked Questions',
+                    'http://c-faq.com'],
+            decl : ['C Gibberish to English',
+                    'http://cdecl.org'],
+            ptr  : ['Everything About Pointers',
+                    'http://www-rohan.sdsu.edu/doc/c/pointers-1.2.2'],
+            ref  : ['C Reference',
+                    'http://en.cppreference.com/w/c/header'],
+            std  : ['C11 Standard',
+                    'http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf'],
+            test : ['Unit-testing Macros',
+                    'http://www.jera.com/techinfo/jtns/jtn002.html'],
+            bigo : ['Space and Time Big-O Complexities',
+                    'http://www.bigocheatsheet.com'],
+            book : ['The Definitive C Book Guide and List',
+                    'http://stackoverflow.com/questions/562303'],
+            ask  : ['Short, Self Contained, Compilable, Example',
+                    'http://sscce.org'],
+            room : ['Draft of the Guidelines of This Room',
+                    'https://github.com/petervaro/stackoverflow_c_chat/blob/gh-pages/rules.md'],
+            chat : ['Chat-Lang',
+                    'http://bit.ly/c_chat'],
+            lang : ['Chat-Lang User Script',
+                    'https://raw.githubusercontent.com/petervaro/stackoverflow' +
+                    '_c_chat/gh-pages/chatlang.user.js'],
+            sand : ["StackOverflow's Sandbox room",
+                    'http://chat.stackoverflow.com/rooms/1/sandbox'],
+            lic  : ['Choosing an OSS License',
+                    'http://choosealicense.com'],
+            glob : ['Global Variables Are Bad',
+                    'http://c2.com/cgi/wiki?GlobalVariablesAreBad'],
+            pack : ['The Lost Art of C Structure Packing',
+                    'http://www.catb.org/esr/structure-packing']
+        };
 
     /* Build hierarchy of the cheat-sheet */
     var notes = document.createElement('div');
@@ -78,14 +86,17 @@
 
     /* Construct regex pattern based on abbreviations and
        also build the cheat-sheet as well */
-    var pattern_abbr = '(^|[^`"\'/\\w\\\\])(/(';
-    var not_first = 0;
-    var values = [];
-    var item;
-    for (var abbreviation in abbreviations)
+    var item,
+        values,
+        abbreviation,
+        pattern_abbr = '(^|[^`"\'/\\w\\\\])(/(',
+        keys         = Object.keys(abbreviations).sort();
+    for (var i=0; i<keys.length; i++)
     {
+        abbreviation = keys[i];
+
         /* If not the first iteration */
-        if (not_first++)
+        if (i)
         {
             pattern_abbr += '|';
             notes_code.appendChild(document.createElement('br'));
