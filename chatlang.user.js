@@ -3,7 +3,7 @@
 // @name The C Stackoverflow Chatroom's chat-lang auto-formatter
 // @namespace petervaro
 // @author Peter Varo
-// @version 0.4.6
+// @version 0.4.7
 // @downloadURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
 // @include http://chat.stackoverflow.com/rooms/54304/c
@@ -24,6 +24,10 @@
         link          = '`](http://bit.ly/c_chat);',
         abbreviations =
         {
+            asm  : ['Programming in Assembly',
+                    'http://download-mirror.savannah.gnu.org/releases/pgubook/ProgrammingGroundUp-1-0-booksize.pdf'],
+            bit  : ['Bit Twiddling Hacks',
+                    'http://graphics.stanford.edu/~seander/bithacks.html'],
             faq  : ['Frequently Asked Questions',
                     'http://c-faq.com'],
             decl : ['C Gibberish to English',
@@ -44,7 +48,7 @@
                     'http://sscce.org'],
             room : ['Draft of the Guidelines of This Room',
                     'https://github.com/petervaro/stackoverflow_c_chat/blob/gh-pages/rules.md'],
-            chat : ['Chat-Lang',
+            chat : ['Conventional Greetings of This Room',
                     'http://bit.ly/c_chat'],
             lang : ['Chat-Lang User Script',
                     'https://raw.githubusercontent.com/petervaro/stackoverflow' +
@@ -56,7 +60,9 @@
             glob : ['Global Variables Are Bad',
                     'http://c2.com/cgi/wiki?GlobalVariablesAreBad'],
             pack : ['The Lost Art of C Structure Packing',
-                    'http://www.catb.org/esr/structure-packing']
+                    'http://www.catb.org/esr/structure-packing'],
+            name : ['Reserved Names and Conventions',
+                    'https://www.gnu.org/software/libc/manual/html_node/Reserved-Names.html']
         };
 
     /* Build hierarchy of the cheat-sheet */
