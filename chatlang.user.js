@@ -3,17 +3,19 @@
 // @name The C Stackoverflow Chatroom's chat-lang auto-formatter
 // @namespace petervaro
 // @author Peter Varo
-// @version 0.4.8
-// @downloadURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
-// @updateURL https://raw.githubusercontent.com/petervaro/stackoverflow_c_chat/gh-pages/chatlang.user.js
+// @version 0.4.9
+// @downloadURL https://github.com/petervaro/stackoverflow_c_chat/raw/gh-pages/chatlang.user.js
+// @updateURL https://github.com/petervaro/stackoverflow_c_chat/raw/gh-pages/chatlang.user.js
 // @include http://chat.stackoverflow.com/rooms/54304/c
 // @include http://chat.stackoverflow.com/rooms/1/sandbox
+// @include https://chat.stackoverflow.com/rooms/54304/c
+// @include https://chat.stackoverflow.com/rooms/1/sandbox
 // @run-at document-end
 // @grant none
 // ==/UserScript==
 
 /*
-Copyright (C) 2015-2016 Peter Varo and the StackOverflow C Chatroom Team
+Copyright (C) 2015-2017 Peter Varo and the StackOverflow C Chatroom Team
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software

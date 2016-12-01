@@ -94,4 +94,3 @@ one of the owners directly, or ping them publicly in the room:
 
   - [Peter Varo](http://stackoverflow.com/users/2188562)
   - [Kamiccolo](http://stackoverflow.com/users/1150918)
-  - [Haris](http://stackoverflow.com/users/1795279)
