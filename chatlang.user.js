@@ -3,7 +3,7 @@
 // @name The C Stackoverflow Chatroom's chat-lang auto-formatter
 // @namespace petervaro
 // @author Peter Varo
-// @version 0.4.9
+// @version 0.5.0
 // @downloadURL https://github.com/petervaro/stackoverflow_c_chat/raw/gh-pages/chatlang.user.js
 // @updateURL https://github.com/petervaro/stackoverflow_c_chat/raw/gh-pages/chatlang.user.js
 // @include http://chat.stackoverflow.com/rooms/54304/c
@@ -70,8 +70,7 @@ If not, see <http://www.gnu.org/licenses>.
             chat : ['Conventional Greetings of This Room',
                     'http://bit.ly/c_chat'],
             lang : ['Chat-Lang User Script',
-                    'https://raw.githubusercontent.com/petervaro/stackoverflow' +
-                    '_c_chat/gh-pages/chatlang.user.js'],
+                    'https://github.com/petervaro/stackoverflow_c_chat/raw/gh-pages/chatlang.user.js'],
             sand : ["StackOverflow's Sandbox room",
                     'http://chat.stackoverflow.com/rooms/1/sandbox'],
             lic  : ['Choosing an OSS License',
